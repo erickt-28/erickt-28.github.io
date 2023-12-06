@@ -7,13 +7,13 @@ app = FastAPI()
 
 
 def main():
-    print("Access Google Sheet via API...")
+    #print("Access Google Sheet via API...")
     # your code here
     sa = gspread.service_account()
     sh = sa.open("TRIAL_PROGRAM_KASIR")
     wks = sh.worksheet("KASIR")
     wks2 = sh.worksheet("DATABASE")
-    print("Upload to JIRA via API...")
+    #print("Upload to JIRA via API...")
     data_raw =  wks.get('D7:D10')
     data = (pd.DataFrame(data=data_raw)).transpose()
     data_values = data.values.tolist()
@@ -22,4 +22,4 @@ def main():
 @app.get("/")
 def root():
     main()
-    return {"message": "Done"}
+    #return {"message": "Done"}
