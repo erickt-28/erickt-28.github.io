@@ -22,4 +22,4 @@ def main():
 @app.get("/")
 def root():
     main()
-    #return {"message": "Done"}
+    return {"message": "Done"}
